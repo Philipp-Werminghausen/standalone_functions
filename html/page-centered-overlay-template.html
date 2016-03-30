@@ -1,0 +1,50 @@
+<!-- 
+    By Philipp Werminghausen
+    3/30/2016
+    philipp.werminghausen@gmail.com
+    
+    -What: A overlay centered horizontally and vertically. Scaling Width
+    -Support: (IE9+,FF3+,chrome,safari2+)
+                - note more support for IE6+, FF1+ SF1+ available by using transparent background png and MS filters:
+                    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#550000FF, endColorstr=#550000FF)";
+                    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#550000FF, endColorstr=#550000FF);
+-->
+<style>
+    .overly-x2{
+        height: 100%; 
+        width: 100%; 
+        position: fixed; 
+        top: 0px; 
+        left: 0px; 
+        bottom: 0px; 
+        right: 0px; 
+        overflow: visible; 
+        z-index: 900001; 
+        display: table; /*note if initially hidden show with display: table*/
+    }
+    .overlay-2x-background{
+        position: absolute;
+        width:100%;
+        height:2000px;
+        z-index:925000;
+        background-color:rgba(0, 0, 0, 0.5);
+        cursor:pointer;
+    }
+    .overlay-2x-content-container{
+        display:table-cell;
+        vertical-align:middle;
+        width:100%;
+        text-align: center;
+    }
+    .overlay-2x-content{
+        width:100%;
+        max-width:500px;
+        max-height:500px;
+    }
+</style>
+<div class="overly-x2" onclick="javascript:$(this).hide();">
+    <div class="overlay-2x-background"></div>
+    <div class="overlay-2x-content-container">
+        <img src="http://dummyimage.com/640x640/000000/fff" alt="" class="overlay-2x-content" />
+    </div>
+</div>
